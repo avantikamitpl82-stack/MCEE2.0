@@ -33,6 +33,7 @@
 	color: #37383A;
 	font-style: normal;
      line-height: 26px;
+	 overflow-x: hidden;
 }
 .text-left{
     text-align: left !important;
