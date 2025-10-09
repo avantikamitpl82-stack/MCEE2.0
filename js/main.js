@@ -1,8 +1,51 @@
+// zoom-detect.js
+(function() {
+    // Function to get approximate browser zoom percentage
+    function getZoomPercent() {
+        if (window.devicePixelRatio) {
+            return Math.round(window.devicePixelRatio * 100);
+        }
+        if (window.outerWidth && window.innerWidth) {
+            return Math.round((window.outerWidth / window.innerWidth) * 100);
+        }
+        return 100; // fallback
+    }
+
+    // Function to add/remove zoom class
+    function applyZoomClass() {
+        const zoom = getZoomPercent();
+        const root = document.documentElement;
+
+        // Optional: store current zoom in data attribute
+        root.setAttribute('data-zoom', zoom);
+
+        if (zoom <= 90) { // 90% or below
+            root.classList.add('zoom-90-or-below');
+        } else {
+            root.classList.remove('zoom-90-or-below');
+        }
+    }
+
+    // Run on page load and window resize
+    window.addEventListener('load', applyZoomClass);
+    window.addEventListener('resize', applyZoomClass);
+
+    // Poll every 600ms to detect zoom changes not triggering resize
+    let prevZoom = getZoomPercent();
+    setInterval(function() {
+        const currentZoom = getZoomPercent();
+        if (currentZoom !== prevZoom) {
+            prevZoom = currentZoom;
+            applyZoomClass();
+        }
+    }, 600);
+})();
+
+
+
+// end //
 (function ($) {
 	"use strict";
-
-
-
 	// skill
 	$(".skill-per").each(function () {
 		var $this = $(this);
