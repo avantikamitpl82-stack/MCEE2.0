@@ -194,9 +194,9 @@ background-position: 0 -100px;
     .second-menu .main-menu ul li {
     margin-left: 30px;
 }
-        .call-box strong {
+        /* .call-box strong {
     font-size: 20px;
-}
+} */
 
     .portfolio-box .caption .arrow-icon {
     right: 0;
@@ -679,6 +679,55 @@ margin-right: 8px;
     }
 
 }
+/* Tablet desktop :1000 px. */
+@media (min-width: 916px) and (max-width: 1200px) {
+    .logo{
+        width: 100%;
+    }
+}
+/* Styles for 90% zoom or below */
+html.zoom-90-or-below .logo {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Optional debug overlay */
+html.zoom-90-or-below body::after {
+    content: "Zoom ≤ 90%";
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 9999;
+}
+
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
+    .logo {
+        width: 80%; /* adjust as needed */
+    }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo {
+        width: 90%;
+    }
+}
+
+/* Desktop: 1025px and above */
+@media (min-width: 1025px) {
+    .logo {
+        width: 100%;
+    }
+}
+
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
