@@ -941,6 +941,7 @@ display: inline-block;
     .cta-bg{
         padding: 100px 0;
     }
+    
 
     .cta-bg .video-img {
     margin-top: 0px;
@@ -2526,7 +2527,7 @@ padding-left: 0;
 }
     .cta-bg .video-img {
     margin-top: 50px;
-    height: 500px;
+    height: 100px;
 }
     .logo {
     height: auto;
@@ -3222,4 +3223,5 @@ margin: 0;
     .button-group button {
     margin: 0 2px;
 
+}
 }
