@@ -479,7 +479,7 @@ label {
   width: 35px;
 }
 
-.h-cta-icon {
+.h-bgicon {
   float: left;
   display: block;
   margin-right: 20px;
@@ -2152,8 +2152,8 @@ label {
   max-width: 6000px;
   height: auto;
   display: block;
-  margin-left: -50px;
-  margin-top: -85px;
+  margin-left: -10px;
+  margin-top: -25px;
 }
 
 
@@ -2528,7 +2528,7 @@ label {
 }
 
 .s-about-content .txt-clr {
-  color: #004C3F;
+  color: #044385;
   font-size: 18px;
   line-height: 28px;
 }
@@ -6665,10 +6665,49 @@ section:hover .section-title h2::before {
 /* 13. cta */
 .cta-bg {
   position: relative;
+ 
   background-size: cover;
   background-position: center;
   z-index: 1;
 }
+/* Make background image responsive and cover area */
+.cta-bg {
+  background-image: url('img/bg/cta_bg.png');
+  background-size: cover;       /* scales image to fill the container */
+  background-position: center;  /* centers image when cropped */
+  background-repeat: no-repeat; /* prevents tiling */
+  width: 100%;
+}
+
+/* Add responsive padding */
+.cta-area.cta-bg {
+  padding: 100px 0; /* default for desktops */
+}
+
+/* Tablet screens */
+@media (max-width: 991px) {
+  .cta-area.cta-bg {
+    padding: 70px 0;
+    background-position: center top;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .cta-area.cta-bg {
+    padding: 50px 0;
+    background-size: contain; /* show full image if possible */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .cta-area.cta-bg {
+    padding: 40px 0;
+    background-size: cover;
+  }
+}
+
 
 .cta-title.video-title h2 {
   font-size: 68px;
